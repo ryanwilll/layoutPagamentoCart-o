@@ -21,17 +21,22 @@
 .container-card img {
   width: 19em;
 }
-
+.big-letter {
+  color: var(--White);
+  font-weight: normal;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+.small-letter {
+  display: inline-block;
+  color: var(--White);
+  font-size: 0.8em;
+  font-weight: normal;
+}
 .container-card .card-back {
   position: absolute;
   right: 1em;
   top: 2em;
-}
-
-.container-card .card-front {
-  position: absolute;
-  left: 1em;
-  top: 8em;
 }
 
 .card-relative {
@@ -40,15 +45,35 @@
 .card-absolute {
   position: absolute;
 }
+.container-card .card-front {
+  position: absolute;
+  left: 1em;
+  top: 8em;
+}
 .container-card .card-front img.card-absolute {
   top: 1em;
   left: 1em;
   width: 4em;
 }
-
-.small-letter {
-  color: var(--White);
+.container-card .card-front h2:nth-child(3) {
+  bottom: 2.5em;
+  left: 1em;
 }
+.container-card .card-front h2:nth-child(4) {
+  bottom: 1.2em;
+  left: 1.9em;
+  font-weight: 400;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+.container-card .card-front h2:nth-child(5) {
+  bottom: 1.2em;
+  right: 1.9em;
+  font-weight: 400;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
 .small-letter.back {
   display: inline-block;
   color: var(--White);
