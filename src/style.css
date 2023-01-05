@@ -1,0 +1,59 @@
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --LightGrayishViolet: hsl(270, 3%, 87%);
+  --DarkGrayishViolet: hsl(279, 6%, 55%);
+  --VeryDarkViolet: hsl(278, 68%, 11%);
+}
+
+.container-card {
+  height: 40vh;
+  width: 100%;
+  display: block;
+  position: relative;
+  background: url(../images/bg-main-mobile.png) no-repeat;
+  background-size: contain;
+}
+
+.container-card img {
+  width: 19em;
+}
+
+.container-card .card-back {
+  position: absolute;
+  right: 1em;
+  top: 2em;
+}
+
+.container-card .card-front {
+  position: absolute;
+  left: 1em;
+  top: 8em;
+}
+
+.card-relative {
+  position: relative;
+}
+.card-absolute {
+  position: absolute;
+}
+.container-card .card-front img.card-absolute {
+  top: 1em;
+  left: 1em;
+  width: 4em;
+}
+
+.small-letter {
+  color: var(--White);
+}
+.small-letter.back {
+  display: inline-block;
+  color: var(--White);
+  font-size: 0.8em;
+  font-weight: normal;
+  top: 5.6em;
+  right: 2.5em;
+}
