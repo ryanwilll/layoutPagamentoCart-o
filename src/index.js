@@ -1,12 +1,13 @@
-document.querySelector("#nome-cartao").oninvalid = function (evt) {
+function oninvalid(evt) {
   // essa linha cancela o comportamento padrão do navegador
   evt.preventDefault();
   // faz a validação novamente
 
   if (!this.validity.valid) {
     //aqui eu mostro o alert
+    alert("AB");
   }
-};
+}
 
 function lettersOnly(evt) {
   evt = evt ? evt : event;
@@ -22,8 +23,6 @@ function lettersOnly(evt) {
     (charCode < 65 || charCode > 90) &&
     (charCode < 97 || charCode > 122)
   ) {
-    alert("Apenas letras");
-
     return false;
   }
   return true;

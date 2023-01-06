@@ -29,7 +29,7 @@
 
         <h2 class="big-letter card-absolute">0000 0000 0000 0000</h2>
         <h2 class="small-letter card-absolute"> Jane Appleseed</h2>
-        <h2 class="small-letter card-absolute"> 00/00</h2>
+        <h2 class="small-letter card-absolute">00/00</h2>
       </div>
 
     </div>
@@ -44,19 +44,20 @@
 
         <div class="numero-cartao">
           <h2 class="inputs-letter">Card Number</h2>
-          <input class="numbers" id="numero-cartao-input" required nome="numero-cartao" type="text" maxlength="16"
+          <input class="numbers" id="numero-cartao-input" required nome="numero-cartao" type="tel" maxlength="16"
             minlength="16" placeholder="e.g. 1234 5678 9123 0000" onkeypress="return numberOnly(event)">
         </div>
         <div class="input-section flex">
           <div class="data-validade">
             <h2 class="inputs-letter">Exp. Date (MM/YY)</h2>
-            <input required name="MM-card" maxlength="2" class="flex-item" type="text" placeholder="MM">
-            <input required name="YY-card" maxlength="2" class="flex-item" type="text" placeholder="YY">
+            <input required name="MM-card" minlength="2" maxlength="2" class="flex-item" type="tel" placeholder="MM">
+            <input required name="YY-card" minlength="2" maxlength="2" class="flex-item" type="tel" placeholder="YY">
           </div>
 
           <div class="cvc">
             <h2 class="inputs-letter">CVC</h2>
-            <input class="numbers" name="CVC-card" maxlength="3" required type="number" placeholder="e.g. 123">
+            <input class="numbers" name="CVC-card" minlength="3" maxlength="3" required type="tel"
+              placeholder="e.g. 123">
           </div>
         </div>
 
