@@ -1,4 +1,4 @@
-function oninvalid(evt) {
+document.querySelector("#nome-cartao").oninvalid = function (evt) {
   // essa linha cancela o comportamento padrão do navegador
   evt.preventDefault();
   // faz a validação novamente
@@ -7,7 +7,7 @@ function oninvalid(evt) {
     //aqui eu mostro o alert
     alert("AB");
   }
-}
+};
 
 function lettersOnly(evt) {
   evt = evt ? evt : event;
