@@ -11,11 +11,11 @@
 
 .container-card {
   height: 40vh;
-  width: 100%;
+  width: 100vw;
   display: block;
   position: relative;
   background: url(../images/bg-main-mobile.png) no-repeat;
-  background-size: contain;
+  background-size: 100%;
 }
 
 .container-card img {
@@ -90,8 +90,17 @@ section {
 }
 section input {
   width: 90vw;
+  height: 3em;
+  border: 2px solid var(--LightGrayishViolet);
   border-radius: 0.3em;
-  margin-bottom: 1em;
+  padding: 0 0 0 1em;
+}
+.input-section h2 {
+  margin-top: 1em;
+}
+section input:focus {
+  outline: 0;
+  border: 1px solid var(--VeryDarkViolet);
 }
 .inputs-letter {
   text-transform: uppercase;
@@ -113,7 +122,7 @@ section input {
 }
 
 .input-section .btn-confirm {
-  margin: 1em 0 0 0;
+  margin: 2em 0 1em 0;
   border: 1em solid var(--VeryDarkViolet);
   border-radius: 0.5em;
   color: var(--White);
