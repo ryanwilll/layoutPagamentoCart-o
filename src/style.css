@@ -48,7 +48,7 @@
 .container-card .card-front {
   position: absolute;
   left: 1em;
-  top: 8em;
+  top: 7.9em;
 }
 .container-card .card-front img.card-absolute {
   top: 1em;
@@ -81,4 +81,25 @@
   font-weight: normal;
   top: 5.6em;
   right: 2.5em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+}
+section input {
+  width: 90vw;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+}
+.inputs-letter {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: var(--VeryDarkViolet);
+}
+
+.data-validade,
+.cvc {
+  display: flex;
 }
