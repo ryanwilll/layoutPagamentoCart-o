@@ -33,32 +33,36 @@
       </div>
 
     </div>
-
-    <section class="input-section">
-      <div class="nome">
-        <h2 class="inputs-letter">Cardholder Name</h2>
-        <input required placeholder="e.g. Jane Appleseed" type="text">
-      </div>
-
-      <div class="numero-cartao">
-        <h2 class="inputs-letter">Card Number</h2>
-        <input required type="text" placeholder="e.g. 1234 5678 9123 0000">
-      </div>
-      <div class="input-section flex">
-        <div class="data-validade">
-          <h2 class="inputs-letter">Exp. Date (MM/YY)</h2>
-          <input required class="flex-item" type="text" placeholder="MM">
-          <input required class="flex-item" type="text" placeholder="YY">
+    <form action="">
+      <section class="input-section">
+        <div class="nome">
+          <h2 class="inputs-letter">Cardholder Name</h2>
+          <input id="nome-cartao" required oninvalid="this.setCustomValidity('')"
+            onchange="try{setCustomValidity('')}catch(e){}" name="nome-cartao" minlength="10" maxlength="25"
+            placeholder="e.g. Jane Appleseed" onkeypress="return lettersOnly(event)" ; type="text">
+          <p></p>
         </div>
 
-        <div class="cvc">
-          <h2 class="inputs-letter">CVC</h2>
-          <input required="true" type="text" placeholder="e.g. 123">
+        <div class="numero-cartao">
+          <h2 class="inputs-letter">Card Number</h2>
+          <input required nome="numero-cartao" maxlength="16" type="number" placeholder="e.g. 1234 5678 9123 0000">
         </div>
-      </div>
-      <button class="btn-confirm" type="submit">Confirm</button>
-    </section>
+        <div class="input-section flex">
+          <div class="data-validade">
+            <h2 class="inputs-letter">Exp. Date (MM/YY)</h2>
+            <input required name="MM-card" maxlength="2" class="flex-item" type="number" placeholder="MM">
+            <input required name="YY-card" maxlength="2" class="flex-item" type="number" placeholder="YY">
+          </div>
 
+          <div class="cvc">
+            <h2 class="inputs-letter">CVC</h2>
+            <input name="CVC-card" maxlength="3" required type="number" placeholder="e.g. 123">
+          </div>
+        </div>
+
+        <button class="btn-confirm" type="submit">Confirm</button>
+      </section>
+    </form>
     <!-- <section class="complete">
       <img src="./images/icon-complete.svg"
         alt="Imagem simbolica com uma verificado, para mostrar que foi concluído com sucesso">

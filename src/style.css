@@ -97,6 +97,7 @@ section input {
 }
 .input-section h2 {
   margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 section input:focus {
   outline: 0;
@@ -114,8 +115,9 @@ section input:focus {
 .input-section .flex input {
   width: 5em;
 }
+
 .input-section .cvc {
-  margin: 0 0 0 1em;
+  margin: 0 0 0 2em;
 }
 .input-section .cvc input {
   width: 10em;
