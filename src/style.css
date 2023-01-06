@@ -98,8 +98,24 @@ section input {
   font-size: 0.9em;
   color: var(--VeryDarkViolet);
 }
-
-.data-validade,
-.cvc {
+.input-section .flex {
   display: flex;
+  width: 100%;
+}
+.input-section .flex input {
+  width: 5em;
+}
+.input-section .cvc {
+  margin: 0 0 0 1em;
+}
+.input-section .cvc input {
+  width: 10em;
+}
+
+.input-section .btn-confirm {
+  margin: 1em 0 0 0;
+  border: 1em solid var(--VeryDarkViolet);
+  border-radius: 0.5em;
+  color: var(--White);
+  background: var(--VeryDarkViolet);
 }
