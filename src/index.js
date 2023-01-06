@@ -9,11 +9,11 @@
 //   }
 // };
 
-document.getElementById("nome-cartao").onkeypress = function (e) {
-  var chr = String.fromCharCode(e.which);
-  if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0)
-    return false;
-};
+// document.getElementById("nome-cartao").onkeypress = function (e) {
+//   var chr = String.fromCharCode(e.which);
+//   if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0)
+//     return false;
+// };
 
 function lettersOnly(evt) {
   evt = evt ? evt : event;
