@@ -1,13 +1,13 @@
-// document.querySelector("#nome-cartao").oninvalid = function (evt) {
-//   // essa linha cancela o comportamento padrão do navegador
-//   evt.preventDefault();
-//   // faz a validação novamente
+document.querySelector("#nome-cartao").oninvalid = function (evt) {
+  // essa linha cancela o comportamento padrão do navegador
+  evt.preventDefault();
+  // faz a validação novamente
 
-//   if (!this.validity.valid) {
-//     //aqui eu mostro o alert
-//     alert("AB");
-//   }
-// };
+  if (!this.validity.valid) {
+    //aqui eu mostro o alert
+    alert("AB");
+  }
+};
 
 // document.getElementById("nome-cartao").onkeypress = function (e) {
 //   var chr = String.fromCharCode(e.which);
