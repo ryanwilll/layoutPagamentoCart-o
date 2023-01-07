@@ -1,67 +1,22 @@
-document.querySelector("#nome-cartao").oninvalid = function (evt) {
-  // essa linha cancela o comportamento padrão do navegador
-  evt.preventDefault();
-  // faz a validação novamente
+const inputNome = document.querySelector("#nome-cartao");
+const inputNomeTexto = document.querySelector("#textoErro-Nome");
+//
+const inputNumeroCartao = document.querySelector("#numero-cartao-input");
+const inputNumeroTexto = document.querySelector("#textoErro-Numero");
+//
+const inputDataValidadeMM = document.querySelector("#validade-mm");
+const inputDataValidadeYY = document.querySelector("#validade-yy");
+const inputDataValidadeTexto = document.querySelector("textoErro-Validade");
+//
+const inputCVC = document.querySelector("#cvc");
+const inputCVCTexto = document.querySelector("#textoErro-cvc");
 
-  if (!this.validity.valid) {
-    //aqui eu mostro o alert
-    alert("AB");
+document.getElementById("nome-cartao").onkeypress = function (e) {
+  var chr = String.fromCharCode(e.which);
+  if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0) {
+    alert(
+      "Atenção, o campo nome, deve conter apenas letras. Sem caracteres especiais ou números"
+    );
+    return false;
   }
 };
-
-// document.getElementById("nome-cartao").onkeypress = function (e) {
-//   var chr = String.fromCharCode(e.which);
-//   if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0)
-//     return false;
-// };
-
-function lettersOnly(evt) {
-  evt = evt ? evt : event;
-  var charCode = evt.charCode
-    ? evt.charCode
-    : evt.keyCode
-    ? evt.keyCode
-    : evt.which
-    ? evt.which
-    : 0;
-  if (
-    charCode > 31 &&
-    (charCode < 65 || charCode > 90) &&
-    (charCode < 97 || charCode > 122)
-  ) {
-    return false;
-  }
-  return true;
-}
-function numberOnly(evt) {
-  evt = evt ? evt : event;
-
-  var charCode = evt.charCode
-    ? evt.charCode
-    : evt.keyCode
-    ? evt.keyCode
-    : evt.which
-    ? evt.which
-    : 0;
-  if (charCode < 48 || charCode > 57) {
-    alert("Numeros");
-
-    return false;
-  }
-  return true;
-}
-
-/*
-
-*/
-function onlynumber(evt) {
-  var theEvent = evt || window.event;
-  var key = theEvent.keyCode || theEvent.which;
-  key = String.fromCharCode(key);
-  //var regex = /^[0-9.,]+$/;
-  var regex = /^[0-9.]+$/;
-  if (!regex.test(key)) {
-    theEvent.returnValue = false;
-    if (theEvent.preventDefault) theEvent.preventDefault();
-  }
-}
