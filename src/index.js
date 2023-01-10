@@ -17,25 +17,58 @@ const inputCVCTexto = document.querySelector("#textoErro-cvc");
 //
 const botaoSubmit = document.querySelector(".btn-confirm");
 
-inputNome.addEventListener("input", (e) => {
-  document.querySelector("#nome-cartao-fix").textContent = e.target.value;
+inputNome.addEventListener("input", (eventNome) => {
+  if (eventNome.target.value === "") {
+    document.querySelector("#nome-cartao-fix").textContent = "JANE APPLESEED";
+  } else {
+    document.querySelector("#nome-cartao-fix").textContent =
+      eventNome.target.value;
+  }
 });
 
-inputNumeroCartao.addEventListener("input", (e) => {
-  let formattedNumber = e.target.value.toString().replace(/\d{4}(?=.)/g, "$& "); //place a space after every 4 characters
-  document.querySelector("#numero-cartao-fix").textContent = formattedNumber;
+inputNumeroCartao.addEventListener("input", (eventNumero) => {
+  let formattedNumber = eventNumero.target.value
+    .toString()
+    .replace(/\d{4}(?=.)/g, "$& "); //place a space after every 4 characters
+
+  if (eventNumero.target.value === "") {
+    document.querySelector("#numero-cartao-fix").textContent =
+      "0000 0000 0000 0000";
+  } else {
+    document.querySelector("#numero-cartao-fix").textContent = formattedNumber;
+  }
 });
 
-inputDataValidadeMM.addEventListener("input", (e) => {
-  document.querySelector("#validade-mm-fix").textContent = e.target.value;
+inputDataValidadeMM.addEventListener("input", (eventMM) => {
+  if (eventMM.target.value === "") {
+    document.querySelector("#validade-mm-fix").textContent = "00";
+  } else {
+    document.querySelector("#validade-mm-fix").textContent =
+      eventMM.target.value;
+  }
 });
 
-inputDataValidadeYY.addEventListener("input", (e) => {
-  document.querySelector("#validade-yy-fix").textContent = e.target.value;
+inputDataValidadeYY.addEventListener("input", (eventYear) => {
+  if (eventYear.target.value === "") {
+    document.querySelector("#validade-yy-fix").textContent = "00";
+  } else {
+    document.querySelector("#validade-yy-fix").textContent =
+      eventYear.target.value;
+  }
+
+  if (e.target.value >= 25) {
+    document
+      .querySelector(".mensagem-erro.invisivel")
+      .classList.remove("invisivel");
+  }
 });
 
 inputCVC.addEventListener("input", (e) => {
-  document.querySelector("#cvc-fix").textContent = e.target.value;
+  if (e.target.value === "") {
+    document.querySelector("#cvc-fix").textContent = "000";
+  } else {
+    document.querySelector("#cvc-fix").textContent = e.target.value;
+  }
 });
 
 document.getElementById("nome-cartao").onkeypress = function (e) {
