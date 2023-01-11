@@ -147,7 +147,7 @@ function complete() {
 
 function qtdNome() {
   var nome = document.getElementById("nome-cartao");
-  if (nome.value.length < 8 || nome.value === isNumber) {
+  if (nome.value.length < 8) {
     return false;
   }
 }
