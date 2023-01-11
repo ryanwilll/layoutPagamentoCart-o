@@ -87,7 +87,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   //Se o nome estiver preenchido
-  if (inputNome.value === "") {
+  if (inputNome.value === "" || qtdNome() === false) {
     inputNomeTexto.classList.remove("invisivel");
     return;
   }
@@ -95,8 +95,8 @@ form.addEventListener("submit", (event) => {
     inputNomeTexto.classList.add("invisivel");
   }
 
-  //Se todos os campos estiverem preenchidos
-  if (inputNumeroCartao.value === "") {
+  if (inputNumeroCartao.value === "" || qtdNumero() === false) {
+    //Se todos os campos estiverem preenchidos
     inputNumeroTexto.classList.remove("invisivel");
     return;
   }
@@ -109,7 +109,8 @@ form.addEventListener("submit", (event) => {
     inputDataValidadeYY.value === "" ||
     inputDataValidadeMM.value === "" ||
     isNumber(inputDataValidadeMM.value) ||
-    isNumber(inputDataValidadeYY.value)
+    isNumber(inputDataValidadeYY.value) ||
+    qtdValidade() === false
   ) {
     inputDataValidadeTexto.classList.remove("invisivel");
     return;
@@ -119,16 +120,17 @@ form.addEventListener("submit", (event) => {
   }
 
   //Validar CVC
-  if (inputCVC.value === "") {
+  if (inputCVC.value === "" || qtdCVC() === false) {
     inputCVCTexto.classList.remove("invisivel");
     return;
   }
   inputCVCTexto.classList.add("invisivel");
   complete();
+  completeBtn.addEventListener("click", (submit) => {
+    form.submit();
+  });
 });
-completeBtn.addEventListener("click", (submit) => {
-  form.submit();
-});
+
 function isNumber() {
   const numberRegex = new RegExp(/^[0-9]/);
 
@@ -141,4 +143,35 @@ function isNumber() {
 function complete() {
   (document.getElementById("form").style.display = "none"),
     (document.getElementById("complete").style.display = "block");
+}
+
+function qtdNome() {
+  var nome = document.getElementById("nome-cartao");
+  if (nome.value.length < 8 || nome.value === isNumber) {
+    return false;
+  }
+}
+function qtdNumero() {
+  var numero = document.getElementById("numero-cartao-input");
+  if (numero.value.length < 16) {
+    return false;
+  }
+}
+function qtdValidade() {
+  var numeromm = document.getElementById("validade-mm");
+  var numeroyy = document.getElementById("validade-yy");
+  if (
+    numeromm.value.length < 2 ||
+    numeroyy.value < 2 ||
+    numeromm.value > 12 ||
+    numeroyy.value > 25
+  ) {
+    return false;
+  }
+}
+function qtdCVC() {
+  var cvc = document.getElementById("cvc");
+  if (cvc.value.length < 3) {
+    return false;
+  }
 }
