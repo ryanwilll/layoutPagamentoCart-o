@@ -12,7 +12,7 @@ const outputDataValidadeMM = document.querySelector("#validade-mm-fix");
 
 const inputDataValidadeYY = document.querySelector("#validade-yy");
 const outputDataValidadeYY = document.querySelector("#validade-yy-fix");
-const inputDataValidadeTexto = document.querySelector("textoErro-Validade");
+const inputDataValidadeTexto = document.querySelector("#textoErro-Validade");
 //
 const inputCVC = document.querySelector("#cvc");
 const inputCVCTexto = document.querySelector("#textoErro-cvc");
@@ -78,9 +78,6 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
   if (
     "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM ".indexOf(chr) < 0
   ) {
-    alert(
-      "Atenção, o campo nome, deve conter apenas letras. Sem caracteres especiais ou números"
-    );
     return false;
   }
 };
@@ -89,15 +86,41 @@ form.addEventListener("submit", (event) => {
 
   //Se o nome estiver preenchido
   if (inputNome.value === "") {
-    alert("Preencha o campo Nome");
+    inputNomeTexto.classList.remove("invisivel");
     return;
+  }
+  {
+    inputNomeTexto.classList.add("invisivel");
   }
 
   //Se todos os campos estiverem preenchidos
-  if (inputNumeroCartao.value === "" || isNumber(inputNumeroCartao.value)) {
-    alert("Preenche o campo Número do Cartão");
+  if (inputNumeroCartao.value === "") {
+    inputNumeroTexto.classList.remove("invisivel");
     return;
   }
+  {
+    inputNumeroTexto.classList.add("invisivel");
+  }
+
+  //Validar validades do cartão
+  if (
+    inputDataValidadeYY.value === "" ||
+    inputDataValidadeMM.value === "" ||
+    isNumber(inputDataValidadeMM.value) ||
+    isNumber(inputDataValidadeYY.value)
+  ) {
+    inputDataValidadeTexto.classList.remove("invisivel");
+    return;
+  }
+  {
+    inputDataValidadeTexto.classList.add("invisivel");
+  }
+
+  if (inputCVC.value === "") {
+    inputCVCTexto.classList.remove("invisivel");
+  }
+  inputCVCTexto.classList.add("invisivel");
+
   form.submit();
 });
 
