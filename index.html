@@ -73,8 +73,8 @@
 
           <div class="cvc">
             <h2 class="inputs-letter">CVC</h2>
-            <input class="numbers" id="cvc" name="CVC-card" type="tel" maxlength="3" placeholder="e.g. 123"
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input class="numbers" id="cvc" name="CVC-card" type="tel" minlength="3" maxlength="3"
+              placeholder="e.g. 123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             <p id="textoErro-cvc" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve conter
               3
               caracteres. caracteres cada.

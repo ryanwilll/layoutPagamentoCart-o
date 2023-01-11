@@ -57,12 +57,6 @@ inputDataValidadeYY.addEventListener("input", (eventYear) => {
     document.querySelector("#validade-yy-fix").textContent =
       eventYear.target.value;
   }
-
-  if (e.target.value >= 25) {
-    document
-      .querySelector(".mensagem-erro.invisivel")
-      .classList.remove("invisivel");
-  }
 });
 
 inputCVC.addEventListener("input", (e) => {
@@ -94,7 +88,7 @@ form.addEventListener("submit", (event) => {
   }
 
   //Se todos os campos estiverem preenchidos
-  if (inputNumeroCartao.value === "") {
+  if (inputNumeroCartao.value === "" || !isNumber()) {
     inputNumeroTexto.classList.remove("invisivel");
     return;
   }
@@ -116,8 +110,10 @@ form.addEventListener("submit", (event) => {
     inputDataValidadeTexto.classList.add("invisivel");
   }
 
+  //Validar CVC
   if (inputCVC.value === "") {
     inputCVCTexto.classList.remove("invisivel");
+    return;
   }
   inputCVCTexto.classList.add("invisivel");
 
