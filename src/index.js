@@ -1,4 +1,5 @@
 const form = document.querySelector("#form");
+const completeBtn = document.querySelector("#complete-btn");
 //
 const inputNome = document.querySelector("#nome-cartao");
 const outputNome = document.querySelector("#nome-cartao-fix");
@@ -75,6 +76,7 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
     return false;
   }
 };
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -88,7 +90,7 @@ form.addEventListener("submit", (event) => {
   }
 
   //Se todos os campos estiverem preenchidos
-  if (inputNumeroCartao.value === "" || !isNumber()) {
+  if (inputNumeroCartao.value === "") {
     inputNumeroTexto.classList.remove("invisivel");
     return;
   }
@@ -116,10 +118,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
   inputCVCTexto.classList.add("invisivel");
-
+  complete();
+});
+completeBtn.addEventListener("click", (submit) => {
   form.submit();
 });
-
 function isNumber() {
   const numberRegex = new RegExp(/^[0-9]/);
 
@@ -127,4 +130,9 @@ function isNumber() {
     return true;
   }
   return false;
+}
+
+function complete() {
+  (document.getElementById("form").style.display = "none"),
+    (document.getElementById("complete").style.display = "block");
 }
