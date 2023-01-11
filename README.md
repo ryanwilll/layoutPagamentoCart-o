@@ -1,6 +1,5 @@
 # Frontend Mentor - Cartão interativo
 
-
 Esta é uma solução para o [Detalhes do cartão interativo](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
 ![Cartão interativo](./design/mobile-design.jpg)
@@ -10,7 +9,7 @@ Esta é uma solução para o [Detalhes do cartão interativo](https://www.fronte
 
 ## Bem vindo(a)! 👋
 
-Obrigado por verificar este desafio de codificação de front-end.
+Obrigado por verificar este solução de codificação front-end.
 
 [Frontend Mentor](https://www.frontendmentor.io) desafios que ajudam você a melhorar suas habilidades de codificação criando projetos realistas.
 

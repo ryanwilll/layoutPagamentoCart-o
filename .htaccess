@@ -5,3 +5,7 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R,NC]
 
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
