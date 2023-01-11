@@ -1,3 +1,5 @@
+const form = document.querySelector("#form");
+//
 const inputNome = document.querySelector("#nome-cartao");
 const outputNome = document.querySelector("#nome-cartao-fix");
 const inputNomeTexto = document.querySelector("#textoErro-Nome");
@@ -82,3 +84,28 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
     return false;
   }
 };
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  //Se o nome estiver preenchido
+  if (inputNome.value === "") {
+    alert("Preencha o campo Nome");
+    return;
+  }
+
+  //Se todos os campos estiverem preenchidos
+  if (inputNumeroCartao.value === "" || isNumber(inputNumeroCartao.value)) {
+    alert("Preenche o campo Número do Cartão");
+    return;
+  }
+  form.submit();
+});
+
+function isNumber() {
+  const numberRegex = new RegExp(/^[0-9]/);
+
+  if (numberRegex.test(inputNumeroCartao)) {
+    return true;
+  }
+  return false;
+}
