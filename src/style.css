@@ -108,8 +108,7 @@
 .btn-complete {
   text-align: center;
   text-decoration: none;
-  margin: 3em 1em;
-  width: 90%;
+  margin: 2em 0 1em 0;
   border: 1em solid var(--VeryDarkViolet);
   border-radius: 0.5em;
   color: var(--White);
@@ -169,10 +168,11 @@ section input:focus {
   width: 10em;
 }
 
-.input-section .btn-confirm {
+.btn-confirm {
   margin: 2em 0 1em 0;
   border: 1em solid var(--VeryDarkViolet);
   border-radius: 0.5em;
   color: var(--White);
   background: var(--VeryDarkViolet);
+  width: 100%;
 }
