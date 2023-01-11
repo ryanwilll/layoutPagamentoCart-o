@@ -115,6 +115,7 @@ a {
   font-size: 0.5em;
 }
 .bi.bi-x {
+  cursor: pointer;
   font-size: 3em;
   box-sizing: border-box;
   color: rgb(250, 60, 60);
@@ -143,6 +144,7 @@ a {
 }
 
 .btn-complete {
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
   margin: 2em 0 1em 0;
