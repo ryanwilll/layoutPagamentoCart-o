@@ -19,6 +19,12 @@ const inputCVC = document.querySelector("#cvc");
 const inputCVCTexto = document.querySelector("#textoErro-cvc");
 //
 const botaoSubmit = document.querySelector(".btn-confirm");
+//
+const closeBtn = document.querySelector("#close-aviso");
+
+closeBtn.addEventListener("click", (closeAviso) => {
+  document.getElementById("msg-aviso").style.display = "none";
+});
 
 inputNome.addEventListener("input", (eventNome) => {
   if (eventNome.target.value === "") {

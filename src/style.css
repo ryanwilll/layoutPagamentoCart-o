@@ -1,7 +1,9 @@
 * {
   font-family: "Space Grotesk", sans-serif;
 }
-
+a {
+  text-decoration: none;
+}
 :root {
   --White: hsl(0, 0%, 100%);
   --LightGrayishViolet: hsl(270, 3%, 87%);
@@ -84,6 +86,41 @@
   right: 2.5em;
 }
 
+.mensagem-aviso {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(58, 58, 58, 0.9);
+}
+.mensagem-aviso p {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  margin: 3em 0 0 0;
+}
+
+.bi.bi-github,
+.bi.bi-instagram {
+  display: block;
+  color: white;
+  margin-top: 1em;
+  text-align: center;
+  font-size: 2em;
+}
+.mensagem-aviso span {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.5em;
+}
+.bi.bi-x {
+  font-size: 3em;
+  box-sizing: border-box;
+  color: rgb(250, 60, 60);
+  float: right;
+  margin-right: 0.5em;
+}
 #complete {
   display: none;
 }
