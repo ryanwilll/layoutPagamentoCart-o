@@ -14,10 +14,20 @@
 
   <div id="msg-aviso" class="mensagem-aviso">
     <i id="close-aviso" c class="bi bi-x"></i>
-    <p>Atenção, esse é um protótipo de uma tela, ela não realiza nenhuma coleta de informações, mas mesmo assim, não
-      recomendamos inserir dados verdadeiros. <br> <span> By Ryan Wil Darós &copy;</p>
-    <a class="links-aviso" href="#"><i class="bi bi-github"></i></a>
-    <a class="links-aviso" href="#"><i class="bi bi-instagram"></i></a>
+    <p>[PT-BR] <br>Atenção, esse é um protótipo de uma tela, ela não realiza nenhuma coleta de informações, mas mesmo
+      assim, não
+      recomendamos inserir dados verdadeiros.</p>
+    <hr>
+    <p> [EN] <br>Atenção, esse é um protótipo de uma tela, ela não realiza
+      nenhuma coleta de informações, mas mesmo
+      assim, não
+      recomendamos inserir dados verdadeiros.
+    </p>
+    <p class="by">By Ryan Wil Darós &copy</p>
+    <div class="links">
+      <a class="links-aviso" href="#"><i class="bi bi-github"></i></a>
+      <a class="links-aviso" href="#"><i class="bi bi-instagram"></i></a>
+    </div>
   </div>
 
   <main>
@@ -57,7 +67,8 @@
           <h2 class="inputs-letter">Card Number</h2>
           <input class="numbers" id="numero-cartao-input" nome="numero-cartao" type="tel" maxlength="16"
             placeholder="e.g. 1234 5678 9123 0000" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-          <p id="textoErro-Numero" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve conter
+          <p id="textoErro-Numero" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve
+            conter
             16
             caracteres.
           </p>
@@ -79,7 +90,8 @@
             <h2 class="inputs-letter">CVC</h2>
             <input class="numbers" id="cvc" name="CVC-card" type="tel" minlength="3" maxlength="3"
               placeholder="e.g. 123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-            <p id="textoErro-cvc" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve conter
+            <p id="textoErro-cvc" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve
+              conter
               3
               caracteres. caracteres cada.
             </p>

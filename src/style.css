@@ -113,25 +113,32 @@ a {
   background-color: rgba(58, 58, 58, 0.9);
 }
 .mensagem-aviso p {
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
   text-align: center;
   margin: 3em 0 0 0;
 }
 
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
 .bi.bi-github,
 .bi.bi-instagram {
-  display: block;
+  display: flex;
   color: white;
   margin-top: 1em;
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
 }
-.mensagem-aviso span {
-  display: block;
-  margin-top: 1em;
-  font-size: 0.5em;
+
+.mensagem-aviso p.by {
+  font-size: 1em;
 }
+
 .bi.bi-x {
   cursor: pointer;
   font-size: 3em;
