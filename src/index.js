@@ -108,8 +108,9 @@ form.addEventListener("submit", (event) => {
   if (
     inputDataValidadeYY.value === "" ||
     inputDataValidadeMM.value === "" ||
-    isNumber(inputDataValidadeMM.value) ||
-    isNumber(inputDataValidadeYY.value) ||
+    inputDataValidadeMM.value > 12 ||
+    inputDataValidadeYY.value < 23 ||
+    inputDataValidadeYY > 27 ||
     qtdValidade() === false
   ) {
     inputDataValidadeTexto.classList.remove("invisivel");
