@@ -103,7 +103,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
   {
-    inputNomeTexto.classList.add("invisivel");
+    inputNomeTexto.innerHTML = "";
   }
 
   //Se o campo número estiver preenchido corretamente preenchidos
@@ -114,23 +114,29 @@ form.addEventListener("submit", (event) => {
     return;
   }
   {
-    inputNumeroTexto.classList.add("invisivel");
+    inputNumeroTexto.innerHTML = "";
   }
 
   //Validar validades do cartão
-  if (inputDataValidadeYY.value === "") {
+
+  if (inputDataValidadeMM.value === "") {
     inputDataValidadeTexto.innerHTML =
-      "A data de validade do campo ano não pode está vázio.";
-    inputNumeroTexto.classList.remove("invisivel");
-    return;
-  } else if (inputDataValidadeYY.value < 23 || inputDataValidadeYY.value > 30) {
-    inputDataValidadeTexto.innerHTML =
-      "Os números informados são inválidos, cartões validos do ano de 2023 a 2030.";
+      "O campo acima, 'MM' deve ser preenchido, por favor, corrija e tente novamente.";
     inputDataValidadeTexto.classList.remove("invisivel");
     return;
   } else if (inputDataValidadeMM.value < 0 || inputDataValidadeMM.value > 12) {
     inputDataValidadeTexto.innerHTML =
-      "Os números informados são inválidos, cartões validos do mes de 01 a 12.";
+      "O campo acima, 'MM' deve ser preenchido com um número entre 1 e 12";
+    inputDataValidadeTexto.classList.remove("invisivel");
+    return;
+  } else if (inputDataValidadeYY.value === "") {
+    inputDataValidadeTexto.innerHTML =
+      "O campo acima, 'YY' deve ser preenchido, por favor, corrija e tente novamente.";
+    inputDataValidadeTexto.classList.remove("invisivel");
+    return;
+  } else if (inputDataValidadeYY.value < 23 || inputDataValidadeYY.value > 30) {
+    inputDataValidadeTexto.innerHTML =
+      "O campo acima, 'YY' deve ser preenchido com um número entre 23 e 30";
     inputDataValidadeTexto.classList.remove("invisivel");
     return;
   }
@@ -139,13 +145,16 @@ form.addEventListener("submit", (event) => {
   }
 
   //Validar CVC
-  if (inputCVC.value === "") {
+  if (inputCVC.value.length != 3) {
     inputCVCTexto.innerHTML =
       "Os números informados são inválidos, é necessário 3 digitos.";
     inputCVCTexto.classList.remove("invisivel");
     return;
   }
-  inputCVCTexto.classList.add("invisivel");
+  {
+    inputCVCTexto.classList.add("invisivel");
+  }
+
   complete();
   completeBtn.addEventListener("click", (submit) => {
     form.submit();
