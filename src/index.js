@@ -82,6 +82,7 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
     return false;
   }
 };
+const regex = /[0-9]/;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -90,7 +91,7 @@ form.addEventListener("submit", (event) => {
   if (
     inputNome.value === "" ||
     qtdNome() === false ||
-    nomeIsNumber() === true
+    regex.test(inputNome.value) === true
   ) {
     inputNomeTexto.classList.remove("invisivel");
     return;
@@ -135,24 +136,6 @@ form.addEventListener("submit", (event) => {
     form.submit();
   });
 });
-
-function nomeIsNumber() {
-  const nomeRegex = new RegExp(/^[0-9]/);
-
-  if (nomeRegex.test(inputNome)) {
-    return true;
-  }
-  return false;
-}
-
-function isNumber() {
-  const numberRegex = new RegExp(/^[0-9]/);
-
-  if (numberRegex.test(inputNumeroCartao)) {
-    return true;
-  }
-  return false;
-}
 
 function complete() {
   (document.getElementById("form").style.display = "none"),
