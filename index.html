@@ -55,30 +55,45 @@
           <h2 class="inputs-letter">Cardholder Name</h2>
           <input class="nome-cartao" id="nome-cartao" name="nome-cartao" maxlength="25"
             placeholder="e.g. Jane Appleseed" type="text" value="">
-          <p id="textoErro-Nome" class="mensagem-erro nome invisivel"></p>
+          <p id="textoErro-Nome" class="mensagem-erro nome invisivel">Atenção, verifique o campo acima, o mesmo deve
+            conter
+            apenas
+            letras.
+          </p>
         </div>
 
         <div class="numero-cartao">
           <h2 class="inputs-letter">Card Number</h2>
           <input class="numbers" id="numero-cartao-input" nome="numero-cartao" type="tel" maxlength="16"
             placeholder="e.g. 1234 5678 9123 0000" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-          <p id="textoErro-Numero" class="mensagem-erro invisivel"></p>
+          <p id="textoErro-Numero" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve
+            conter
+            16
+            caracteres.
+          </p>
         </div>
         <div class="input-section flex">
           <div class="data-validade">
             <h2 class="inputs-letter">Exp. Date (MM/YY)</h2>
             <input class="flex-item" id="validade-mm" name="MM-card" maxlength="2" pattern="[0-9]{1,2}" type="tel"
-              placeholder="MM">
-            <input class=" flex-item" id="validade-yy" name="YY-card" maxlength="2" pattern="[0-9]{1,2}" type="tel"
-              placeholder="YY">
-            <p id="textoErro-Validade" class="mensagem-erro invisivel"></p>
+              placeholder="MM" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input class="flex-item" id="validade-yy" name="YY-card" maxlength="2" pattern="[0-9]{1,2}" type="tel"
+              placeholder="YY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <p id="textoErro-Validade" class="mensagem-erro invisivel">Atenção, verifique os campo acima, os mesmos
+              devem conter 2
+              caracteres cada.
+            </p>
           </div>
 
           <div class="cvc">
             <h2 class="inputs-letter">CVC</h2>
             <input class="numbers" id="cvc" name="CVC-card" type="tel" minlength="3" maxlength="3"
               placeholder="e.g. 123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-            <p id="textoErro-cvc" class="mensagem-erro invisivel"></p>
+            <p id="textoErro-cvc" class="mensagem-erro invisivel">Atenção, verifique o campo acima, o mesmo deve
+              conter
+              3
+              caracteres. caracteres cada.
+            </p>
           </div>
         </div>
 

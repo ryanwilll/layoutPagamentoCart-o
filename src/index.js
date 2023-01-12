@@ -82,23 +82,17 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
     return false;
   }
 };
+const regex = /[0-9]/;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const regex = /[0-9]/;
+
   //Se o nome estiver preenchido
-  if (inputNome.value === "") {
-    inputNomeTexto.innerHTML = "Campo em branco, preencha-o";
-    inputNomeTexto.classList.remove("invisivel");
-    return;
-  } else if (regex.test(inputNome.value) === true) {
-    inputNomeTexto.innerHTML =
-      "Você inseriu números no nome, por favor, remova-os e tente novamente.";
-    inputNomeTexto.classList.remove("invisivel");
-    return;
-  } else if (qtdNome() === false) {
-    inputNomeTexto.innerHTML =
-      "Hmmn, parece que seu nome está muito curto, por favor, complete.";
+  if (
+    inputNome.value === "" ||
+    qtdNome() === false ||
+    regex.test(inputNome.value) === true
+  ) {
     inputNomeTexto.classList.remove("invisivel");
     return;
   }
@@ -106,10 +100,8 @@ form.addEventListener("submit", (event) => {
     inputNomeTexto.classList.add("invisivel");
   }
 
-  //Se o campo número estiver preenchido corretamente preenchidos
-  if (qtdNumero() === false) {
-    inputNumeroTexto.innerHTML =
-      "Esse cartão não é válido. O Número de caracteres deve ser igual a 16";
+  if (inputNumeroCartao.value === "" || qtdNumero() === false) {
+    //Se todos os campos estiverem preenchidos
     inputNumeroTexto.classList.remove("invisivel");
     return;
   }
@@ -118,19 +110,11 @@ form.addEventListener("submit", (event) => {
   }
 
   //Validar validades do cartão
-  if (inputDataValidadeYY.value === "") {
-    inputDataValidadeTexto.innerHTML =
-      "A data de validade do campo ano não pode está vázio.";
-    inputNumeroTexto.classList.remove("invisivel");
-    return;
-  } else if (inputDataValidadeYY.value < 23 || inputDataValidadeYY.value > 30) {
-    inputDataValidadeTexto.innerHTML =
-      "Os números informados são inválidos, cartões validos do ano de 2023 a 2030.";
-    inputDataValidadeTexto.classList.remove("invisivel");
-    return;
-  } else if (inputDataValidadeMM.value < 0 || inputDataValidadeMM.value > 12) {
-    inputDataValidadeTexto.innerHTML =
-      "Os números informados são inválidos, cartões validos do mes de 01 a 12.";
+  if (
+    inputDataValidadeYY.value === "" ||
+    inputDataValidadeMM.value === "" ||
+    qtdValidade() === false
+  ) {
     inputDataValidadeTexto.classList.remove("invisivel");
     return;
   }
@@ -139,9 +123,7 @@ form.addEventListener("submit", (event) => {
   }
 
   //Validar CVC
-  if (inputCVC.value === "") {
-    inputCVCTexto.innerHTML =
-      "Os números informados são inválidos, é necessário 3 digitos.";
+  if (inputCVC.value === "" || qtdCVC() === false) {
     inputCVCTexto.classList.remove("invisivel");
     return;
   }
@@ -180,6 +162,12 @@ function qtdValidade() {
     numeroyy.value > 30 ||
     numeromm.value < 1
   ) {
+    return false;
+  }
+}
+function qtdCVC() {
+  var cvc = document.getElementById("cvc");
+  if (cvc.value.length < 3) {
     return false;
   }
 }
