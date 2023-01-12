@@ -87,7 +87,11 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   //Se o nome estiver preenchido
-  if (inputNome.value === "" || qtdNome() === false) {
+  if (
+    inputNome.value === "" ||
+    qtdNome() === false ||
+    nomeIsNumber() === true
+  ) {
     inputNomeTexto.classList.remove("invisivel");
     return;
   }
@@ -131,6 +135,15 @@ form.addEventListener("submit", (event) => {
     form.submit();
   });
 });
+
+function nomeIsNumber() {
+  const nomeRegex = new RegExp(/^[0-9]/);
+
+  if (nomeRegex.test(inputNome)) {
+    return true;
+  }
+  return false;
+}
 
 function isNumber() {
   const numberRegex = new RegExp(/^[0-9]/);
