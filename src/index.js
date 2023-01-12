@@ -113,9 +113,6 @@ form.addEventListener("submit", (event) => {
   if (
     inputDataValidadeYY.value === "" ||
     inputDataValidadeMM.value === "" ||
-    inputDataValidadeMM.value > 12 ||
-    inputDataValidadeYY.value < 23 ||
-    inputDataValidadeYY.value > 30 ||
     qtdValidade() === false
   ) {
     inputDataValidadeTexto.classList.remove("invisivel");
@@ -159,9 +156,11 @@ function qtdValidade() {
   var numeroyy = document.getElementById("validade-yy");
   if (
     numeromm.value.length < 2 ||
-    numeroyy.value < 2 ||
+    numeroyy.value.length < 2 ||
+    numeroyy.value < 23 ||
     numeromm.value > 12 ||
-    numeroyy.value > 25
+    numeroyy.value > 30 ||
+    numeromm.value < 1
   ) {
     return false;
   }
