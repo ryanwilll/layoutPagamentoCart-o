@@ -83,7 +83,7 @@ document.getElementById("nome-cartao").onkeypress = function (e) {
   }
 };
 const regex = /[0-9]/;
-const regexEspeciais = /\W|_/;
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -91,8 +91,7 @@ form.addEventListener("submit", (event) => {
   if (
     inputNome.value === "" ||
     qtdNome() === false ||
-    regex.test(inputNome.value) === true ||
-    regexEspeciais.test(inputNome.value) === true
+    regex.test(inputNome.value) === true
   ) {
     inputNomeTexto.classList.remove("invisivel");
     return;
@@ -116,7 +115,7 @@ form.addEventListener("submit", (event) => {
     inputDataValidadeMM.value === "" ||
     inputDataValidadeMM.value > 12 ||
     inputDataValidadeYY.value < 23 ||
-    inputDataValidadeYY > 27 ||
+    inputDataValidadeYY.value > 30 ||
     qtdValidade() === false
   ) {
     inputDataValidadeTexto.classList.remove("invisivel");
