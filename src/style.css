@@ -218,14 +218,16 @@ section input:focus {
 }
 .input-section .flex {
   display: flex;
+  justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 .input-section .flex input {
   width: 4em;
 }
 
 .input-section .cvc {
-  margin: 0 0 0 4em;
+  margin: 0 6vw 0 0;
 }
 .input-section .cvc input {
   width: 10em;
@@ -241,4 +243,100 @@ section input:focus {
   color: var(--White);
   background: var(--VeryDarkViolet);
   width: 100%;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    background-color: pink;
+  }
+  .input-section .flex input {
+    width: 28vw;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(1, 100vh);
+  }
+  .container-card {
+    display: grid;
+    grid-column: 1;
+    background: url(../images/bg-main-desktop.webp) no-repeat;
+    height: 100vh;
+    width: 40vw;
+  }
+  img,
+  picture,
+  svg {
+    max-width: none;
+  }
+  .container-card .card-front {
+    top: 30vh;
+    left: 10vw;
+  }
+  .container-card .card-back {
+    top: 52vh;
+    left: 15vw;
+  }
+  .input-section .cvc {
+    margin: 0 2vw 0 0;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-section {
+    max-width: 100vh;
+  }
+  .input-section .input-width {
+    width: 100%;
+  }
+
+  .card-back #cvc-fix {
+    right: -15%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(1, 100vh);
+  }
+  .container-card {
+    display: grid;
+    grid-column: 1;
+    background: url(../images/bg-main-desktop.webp) no-repeat;
+    height: 100vh;
+    width: 40vw;
+  }
+  img,
+  picture,
+  svg {
+    max-width: none;
+  }
+  .container-card .card-front {
+    top: 30vh;
+    left: 10vw;
+  }
+  .container-card .card-back {
+    top: 52vh;
+    left: 15vw;
+  }
+  .input-section .cvc {
+    margin: 0 2vw 0 0;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-section {
+    max-width: 100vh;
+  }
+  .input-section .input-width {
+    width: 100%;
+  }
 }
