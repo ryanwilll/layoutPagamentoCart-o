@@ -1,5 +1,7 @@
 # Frontend Mentor - Cartão interativo
 
+OBS: LAYOUT DESKTOP NÃO FINALIZADO
+
 Esta é uma solução para o [Detalhes do cartão interativo](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
 ![Cartão interativo](./design/mobile-design.jpg)
